@@ -1,6 +1,7 @@
 FROM maven:3.5-jdk-8
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-		ant-optional \
-		nodejs-legacy \
-	&& rm -rf /var/lib/apt/lists/*
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash \
+         && apt-get install -y --no-install-recommends \
+                ant-optional \
+                nodejs \
+        && rm -rf /var/lib/apt/lists/*
